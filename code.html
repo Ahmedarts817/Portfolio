@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ahmed | Digital Architect &amp; Web Developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#a5cbe9",
+                      "error-container": "#93000a",
+                      "background": "#0b1326",
+                      "inverse-on-surface": "#283044",
+                      "secondary": "#a5cbe9",
+                      "surface-container": "#171f33",
+                      "surface-container-lowest": "#060e20",
+                      "surface-container-highest": "#2d3449",
+                      "on-background": "#dae2fd",
+                      "surface-container-high": "#222a3d",
+                      "tertiary-container": "#de8712",
+                      "on-tertiary-fixed-variant": "#693c00",
+                      "secondary-container": "#234b64",
+                      "on-primary-fixed-variant": "#004c6e",
+                      "tertiary": "#ffb86e",
+                      "surface-container-low": "#131b2e",
+                      "on-error": "#690005",
+                      "surface-variant": "#2d3449",
+                      "on-secondary-container": "#94bad7",
+                      "on-tertiary-fixed": "#2c1600",
+                      "secondary-fixed": "#c9e6ff",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed-variant": "#234b64",
+                      "outline-variant": "#3e4850",
+                      "primary-fixed": "#c9e6ff",
+                      "tertiary-fixed-dim": "#ffb86e",
+                      "on-secondary-fixed": "#001e2f",
+                      "primary-fixed-dim": "#89ceff",
+                      "surface-dim": "#0b1326",
+                      "on-surface": "#dae2fd",
+                      "on-surface-variant": "#bec8d2",
+                      "on-primary-container": "#003751",
+                      "on-tertiary-container": "#4d2b00",
+                      "inverse-primary": "#006591",
+                      "surface": "#0b1326",
+                      "inverse-surface": "#dae2fd",
+                      "on-error-container": "#ffdad6",
+                      "primary": "#89ceff",
+                      "tertiary-fixed": "#ffdcbd",
+                      "on-primary-fixed": "#001e2f",
+                      "surface-bright": "#31394d",
+                      "outline": "#88929b",
+                      "on-secondary": "#04344c",
+                      "on-tertiary": "#492900",
+                      "on-primary": "#00344d",
+                      "primary-container": "#0ea5e9",
+                      "surface-tint": "#89ceff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              },
+              "animation": {
+                'blob': "blob 7s infinite",
+                'float': "float 6s ease-in-out infinite",
+              },
+              "keyframes": {
+                blob: {
+                  "0%": { transform: "translate(0px, 0px) scale(1)" },
+                  "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                  "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                  "100%": { transform: "translate(0px, 0px) scale(1)" },
+                },
+                float: {
+                  "0%, 100%": { transform: "translateY(0)" },
+                  "50%": { transform: "translateY(-20px)" },
+                }
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #0b1326; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        
+        .glass-card { 
+            background: rgba(23, 31, 51, 0.4); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .orb-glow {
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .mesh-bg {
+            background: 
+                radial-gradient(at 0% 0%, hsla(200, 100%, 15%, 1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(215, 100%, 10%, 1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(230, 100%, 15%, 1) 0, transparent 50%);
+        }
+    </style>
+</head>
+<body class="text-on-surface bg-surface selection:bg-primary/30 overflow-x-hidden">
+<!-- Background Elements -->
+<div class="fixed inset-0 pointer-events-none mesh-bg -z-10"></div>
+<div class="fixed top-1/4 left-1/4 w-96 h-96 bg-primary orb-glow rounded-full animate-blob"></div>
+<div class="fixed top-1/2 right-1/4 w-96 h-96 bg-secondary orb-glow rounded-full animate-blob animation-delay-2000"></div>
+<div class="fixed bottom-1/4 left-1/3 w-96 h-96 bg-primary-container orb-glow rounded-full animate-blob animation-delay-4000"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 left-1/2 -translate-x-1/2 w-[90%] z-50 flex justify-between items-center px-8 py-4 mt-5 rounded-full max-w-[1200px] bg-slate-950/80 backdrop-blur-xl shadow-[0px_20px_40px_rgba(0,0,0,0.4)]">
+<div class="text-2xl font-black tracking-tighter text-slate-50 dark:text-slate-50">Ahmed Maxod</div>
+<nav class="hidden md:flex items-center gap-8 font-manrope tracking-tighter text-sm uppercase font-semibold">
+<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#about">About</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#skills">Skills</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#projects">Projects</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#contact">Contact</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-manrope font-bold text-sm uppercase tracking-wider hover:scale-105 transition-transform duration-300 active:scale-95 shadow-[0_0_20px_rgba(14,165,233,0.3)]">
+        Hire Me
+    </button>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-6 overflow-hidden">
+<div class="relative z-10 text-center max-w-4xl mx-auto reveal">
+<span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.3em] uppercase bg-surface-container-high/40 backdrop-blur-md text-primary rounded-full border border-white/5">
+                Available for Projects
+            </span>
+<h1 class="text-6xl md:text-9xl font-extrabold tracking-tighter leading-[0.9] mb-8 text-on-surface">
+                Digital <br/> <span class="text-transparent bg-clip-text bg-gradient-to-br from-primary via-blue-400 to-secondary-container">Architect</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-12 leading-relaxed opacity-80">
+                I engineer high-fidelity web experiences where cutting-edge performance meets uncompromising aesthetic precision.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<a class="px-10 py-5 bg-primary text-slate-950 font-black uppercase text-xs tracking-widest rounded-full shadow-[0_10px_30px_rgba(137,206,255,0.4)] hover:shadow-[0_15px_40px_rgba(137,206,255,0.6)] hover:-translate-y-1 transition-all duration-300" href="#contact">
+                    Start a Project
+                </a>
+<a class="px-10 py-5 glass-card text-on-surface font-black uppercase text-xs tracking-widest rounded-full hover:bg-white/10 hover:-translate-y-1 transition-all duration-300" href="#projects">
+                    View Portfolio
+                </a>
+</div>
+</div>
+<!-- Abstract Element -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30 animate-float">
+<span class="text-[10px] uppercase tracking-widest font-bold">Scroll to explore</span>
+<div class="w-px h-12 bg-gradient-to-b from-primary to-transparent"></div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-32 px-6 relative overflow-hidden" id="about">
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+<div class="relative reveal">
+<div class="aspect-[4/5] rounded-3xl overflow-hidden glass-card p-4">
+<img alt="Ahmed" class="w-full h-full object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100" src="ahmed.jpg"/>
+</div>
+<div class="absolute -bottom-10 -right-10 glass-card p-8 rounded-3xl hidden lg:block shadow-2xl border-white/10">
+<span class="block text-5xl font-black text-primary leading-none">05</span>
+<span class="text-[10px] font-black uppercase tracking-[0.2em] text-on-surface/60">Years of Code Mastery</span>
+</div>
+</div>
+<div class="space-y-8 reveal">
+<div class="inline-block px-3 py-1 bg-primary/10 rounded text-primary text-[10px] font-black uppercase tracking-widest">The Mission</div>
+<h2 class="text-5xl font-extrabold tracking-tight leading-tight">Crafting Digital <br/>Excellence.</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed font-light">
+                    Hello! I'm Ahmed. I specialize in building high-performance web applications that bridge the gap between aesthetics and functionality. My approach is rooted in the belief that great code should be as beautiful as the UI it powers.
+                </p>
+<p class="text-on-surface-variant text-lg leading-relaxed font-light">
+                    I treat every pixel as a deliberate choice and every line of code as a foundation for growth. My work is where engineering rigor meets creative vision.
+                </p>
+<div class="grid grid-cols-2 gap-4 pt-4">
+<div class="glass-card p-4 rounded-2xl flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider">Clean Code</span>
+</div>
+<div class="glass-card p-4 rounded-2xl flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider">Premium UI</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-32 px-6 bg-slate-950/20" id="skills">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-20 reveal">
+<span class="text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-4 block">Capabilities</span>
+<h2 class="text-5xl font-extrabold tracking-tight mb-6">Core Expertise</h2>
+<div class="h-1.5 w-12 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Skill Card 1 -->
+<div class="reveal glass-card p-8 rounded-[2rem] hover:bg-white/5 transition-all duration-500 border-white/5 group hover:-translate-y-2">
+<div class="w-14 h-14 rounded-2xl bg-slate-900/50 flex items-center justify-center mb-8 text-primary shadow-inner border border-white/5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(14,165,233,0.2)] transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="html">html</span>
+</div>
+<h3 class="text-xl font-black mb-3 tracking-tight">HTML5 Architecture</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light opacity-70">Semantic, accessible structures engineered for modern search and performance.</p>
+</div>
+<!-- Skill Card 2 -->
+<div class="reveal glass-card p-8 rounded-[2rem] hover:bg-white/5 transition-all duration-500 border-white/5 group hover:-translate-y-2" style="transition-delay: 100ms;">
+<div class="w-14 h-14 rounded-2xl bg-slate-900/50 flex items-center justify-center mb-8 text-primary shadow-inner border border-white/5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(14,165,233,0.2)] transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="css">css</span>
+</div>
+<h3 class="text-xl font-black mb-3 tracking-tight">Tailwind Styling</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light opacity-70">Utility-first development for highly optimized, bespoke design systems.</p>
+</div>
+<!-- Skill Card 3 -->
+<div class="reveal glass-card p-8 rounded-[2rem] hover:bg-white/5 transition-all duration-500 border-white/5 group hover:-translate-y-2" style="transition-delay: 200ms;">
+<div class="w-14 h-14 rounded-2xl bg-slate-900/50 flex items-center justify-center mb-8 text-primary shadow-inner border border-white/5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(14,165,233,0.2)] transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="javascript">javascript</span>
+</div>
+<h3 class="text-xl font-black mb-3 tracking-tight">Modern JS (ES6+)</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light opacity-70">Dynamic interactivity and complex logic systems with performance in mind.</p>
+</div>
+<!-- Skill Card 4 -->
+<div class="reveal glass-card p-8 rounded-[2rem] hover:bg-white/5 transition-all duration-500 border-white/5 group hover:-translate-y-2" style="transition-delay: 300ms;">
+<div class="w-14 h-14 rounded-2xl bg-slate-900/50 flex items-center justify-center mb-8 text-primary shadow-inner border border-white/5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(14,165,233,0.2)] transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="rebase_edit">rebase_edit</span>
+</div>
+<h3 class="text-xl font-black mb-3 tracking-tight">React Ecosystem</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light opacity-70">Building scalable component architectures with advanced state management.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="py-32 px-6" id="projects">
+<div class="max-w-6xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 reveal">
+<div>
+<span class="text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-4 block">Portfolio</span>
+<h2 class="text-5xl font-extrabold tracking-tight mb-2">Selected Works</h2>
+<p class="text-on-surface-variant font-light opacity-70">A showcase of engineering excellence and visual depth.</p>
+</div>
+<a class="hidden sm:flex items-center gap-3 text-primary font-black uppercase text-xs tracking-widest mt-8 group" href="#">
+                    View Archives <span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="reveal group glass-card rounded-3xl overflow-hidden transition-all duration-700 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] border-white/5">
+<div class="h-64 overflow-hidden relative">
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+<img alt="Fintech Dashboard" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj4kH98iNNj4Rv6W0jVMFT11M3ygBB9Si6fOz6HSwYxkvJ3iat6KtSnLSUKuRaoXHQmsJVZL2rQgPHtDL63PepOgYEQ8O9lUHa-TasG3ApU06jTrMZs1w0QnqarsCBFoiZ54ovwJUTdp3JDY_YZgqcTmJvc_81dDgtxBuVf_oh5jOrb-YbZUpC0Ei2gyczAVwTMKqllQo1JHjOrtVmRy8BoMvmrEGWBLUlD42LAWjr-epGEg3cWzi5qzOA0UIid9cBOd-ZC8T47IP-"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-6">
+<span class="text-[9px] uppercase tracking-widest font-black px-3 py-1 bg-white/5 text-on-surface/60 rounded-full border border-white/5">React</span>
+<span class="text-[9px] uppercase tracking-widest font-black px-3 py-1 bg-white/5 text-on-surface/60 rounded-full border border-white/5">Web3</span>
+</div>
+<h3 class="text-2xl font-black mb-3">Nova Banking UI</h3>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed font-light opacity-80">Next-generation fintech interface with real-time analytics.</p>
+<button class="w-full py-4 glass-card text-on-surface font-black uppercase text-[10px] tracking-widest rounded-xl hover:bg-primary hover:text-slate-950 transition-all duration-500 flex items-center justify-center gap-2">
+                            Explore Case Study <span class="material-symbols-outlined text-base">arrow_outward</span>
+</button>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="reveal group glass-card rounded-3xl overflow-hidden transition-all duration-700 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] border-white/5" style="transition-delay: 100ms;">
+<div class="h-64 overflow-hidden relative">
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+<img alt="E-commerce Platform" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJhAlO2Bp0eX_fimZxbDgbeg-Hnr-6oWx3dynsWzFcwVkLPEjuMQUrXDUxpf-MxyhjJOk_-CJ3N0GazIrMiL_MEUFQCa_q1z_cyt_GIXgkKUI-31mVGV0Ox8qAsmLnTqK-JAgEQUqdPKhSNrJzg_NJK3zeEIoQLHX3bYuwCQhCoR-aAPYPlFNTeBD96RFtZQbS6CLCrMJGjAgyCARWsJSnAgO4PyimF7VgIzO4LJ2Km6KQeqRxMZp6Ku_9TAhT4rmOhcf3VKZxhULL"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-6">
+<span class="text-[9px] uppercase tracking-widest font-black px-3 py-1 bg-white/5 text-on-surface/60 rounded-full border border-white/5">Next.js</span>
+<span class="text-[9px] uppercase tracking-widest font-black px-3 py-1 bg-white/5 text-on-surface/60 rounded-full border border-white/5">Stripe</span>
+</div>
+<h3 class="text-2xl font-black mb-3">LuxeCart Shop</h3>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed font-light opacity-80">Minimalist luxury shopping experience with headless commerce architecture.</p>
+<button class="w-full py-4 glass-card text-on-surface font-black uppercase text-[10px] tracking-widest rounded-xl hover:bg-primary hover:text-slate-950 transition-all duration-500 flex items-center justify-center gap-2">
+                            Explore Case Study <span class="material-symbols-outlined text-base">arrow_outward</span>
+</button>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="reveal group glass-card rounded-3xl overflow-hidden transition-all duration-700 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] border-white/5" style="transition-delay: 200ms;">
+<div class="h-64 overflow-hidden relative">
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+<img alt="AI Application" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGoufhw-Jfn-5Zx-QVbGRN9rqfJQVU_OlPgu_LjbvAm4IgBZxZbinBQHcWJ44DaNKnTfrRzmq4BymJICBXv-WAI6CfgC-4GMW8tx4ATNal1pDHW8EfPzPB_pnsiZU1qTI1iF34hloBvtVzZTrsapl0wpp5T28AEdgVLsVqKXBbE8ZyvNLsMJVFT4ja5-8j2_RbAl0BaRCUNSocgpgPjEhRRFmbWyj9haQUV5XmsHsHqCkQS0x694hK2aUnvCHY2JE8j4wtQ2qbKZYz"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-6">
+<span class="text-[9px] uppercase tracking-widest font-black px-3 py-1 bg-white/5 text-on-surface/60 rounded-full border border-white/5">TypeScript</span>
+<span class="text-[9px] uppercase tracking-widest font-black px-3 py-1 bg-white/5 text-on-surface/60 rounded-full border border-white/5">OpenAI</span>
+</div>
+<h3 class="text-2xl font-black mb-3">Echo AI Tool</h3>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed font-light opacity-80">AI-driven content generation engine powered by neural networks.</p>
+<button class="w-full py-4 glass-card text-on-surface font-black uppercase text-[10px] tracking-widest rounded-xl hover:bg-primary hover:text-slate-950 transition-all duration-500 flex items-center justify-center gap-2">
+                            Explore Case Study <span class="material-symbols-outlined text-base">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 px-6" id="contact">
+<div class="max-w-4xl mx-auto text-center reveal">
+<span class="text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-6 block">Ready to start?</span>
+<h2 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-tight">Let's build <br/> something <span class="text-primary">great</span>.</h2>
+<p class="text-xl text-on-surface-variant mb-12 max-w-2xl mx-auto font-light">
+                Available for worldwide remote collaborations. If you're looking for a partner to elevate your digital presence, I'm here.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+<a class="w-full sm:w-auto flex items-center justify-center gap-4 px-10 py-6 bg-[#25D366] text-white font-black uppercase text-[10px] tracking-[0.2em] rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-[0_15px_40px_rgba(37,211,102,0.25)]" href="#">
+<span class="material-symbols-outlined">chat</span>
+                    WhatsApp Direct
+                </a>
+<a class="w-full sm:w-auto flex items-center justify-center gap-4 px-10 py-6 glass-card text-on-surface font-black uppercase text-[10px] tracking-[0.2em] rounded-2xl border border-white/10 hover:bg-white/10 transition-all" href="mailto:hello@ahmed.dev">
+<span class="material-symbols-outlined">mail</span>
+                    hello@ahmed.dev
+                </a>
+</div>
+<div class="mt-24 flex justify-center gap-12">
+<a class="text-xs font-black uppercase tracking-widest text-on-surface/40 hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="text-xs font-black uppercase tracking-widest text-on-surface/40 hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="text-xs font-black uppercase tracking-widest text-on-surface/40 hover:text-primary transition-colors" href="#">Twitter</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 flex flex-col items-center gap-6 bg-slate-900 font-manrope text-xs tracking-widest uppercase border-t border-white/5">
+<div class="text-lg font-bold text-slate-200">Ahmed Maxoud</div>
+<div class="flex gap-8 text-slate-500">
+<a class="hover:text-sky-300 transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-sky-300 transition-colors" href="#">GitHub</a>
+<a class="hover:text-sky-300 transition-colors" href="#">Twitter</a>
+</div>
+<p class="text-slate-500 opacity-80">© 2024 Ahmed. Built with Digital Curator precision.</p>
+</footer>
+<script>
+    // Reveal animation logic
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body></html>
